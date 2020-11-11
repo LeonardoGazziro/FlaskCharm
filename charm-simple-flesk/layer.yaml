@@ -12,6 +12,6 @@ options:
       - python3-pip
       - gunicorn
       - wget
-  git-deploy:
-    target: /srv/charm-simple-flesk
+    git-deploy:
+        target: /srv/charm-simple-flesk
 repo: https://github.com/LeonardoGazziro/FlaskCharm

@@ -33,7 +33,7 @@ def install_hello_juju():
     # check_call(['/usr/bin/python3', '-m', 'venv', venv_root])
     status_set("maintenance", "Installing Python requirements")
     check_call(['pip3', 'install', 'gunicorn'])
-    check_call(['pip3', 'install', '-r', '/srv/hello-juju/current/requirements.txt'])
+    check_call(['pip3', 'install', '-r', '/srv/charm-simple-flask/current/requirements.txt'])
     # create_database_tables() # hello-juju can operate without a relation via SQLite via its default settings
     set_state('charm_simple_flask.installed')
 
