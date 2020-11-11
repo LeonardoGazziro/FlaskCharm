@@ -1,0 +1,14 @@
+name: charm-simple-flesk
+summary: Basic charm operator with flask API
+maintainer: Leonardo Roberto Gazziro <leogazziro@gmail.com>
+description: |
+  A simples flask API to calculate number factorial using the end-point "/factorial" with param number
+    Example: HOSTIP:5000/factorial?number=3
+    response: 6
+series:
+  - trusty
+tags:
+  - misc
+  - math
+  - factorial
+

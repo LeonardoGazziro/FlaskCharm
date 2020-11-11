@@ -1,0 +1,23 @@
+[Unit]
+Description=Simple Flask App
+After=network.target
+
+[Service]
+WorkingDirectory = {{ project_root }}
+Restart = always
+RestartSec = 5
+ExecStart=/srv/charm-simple-flask/venv/bin/gunicorn \
+            -u {{ user }} \
+            -g {{ group }} \
+            --access-logfile {{ project_root }}/access.log \
+            --error-logfile {{ project_root }}/error.log \
+            --bind 0.0.0.0:{{ port }} \
+            charm_simple_flask:app
+ExecReload = /bin/kill -s HUP $MAINPID
+ExecStop = /bin/kill -s TERM $MAINPID
+ExecStartPre = /bin/mkdir {{ project_root }}/run
+PIDFile = {{ project_root }}/run/charm-simple-flask.pid
+ExecStopPost = /bin/rm -rf {{ project_root }}/run
+
+[Install]
+WantedBy = multi-user.target
