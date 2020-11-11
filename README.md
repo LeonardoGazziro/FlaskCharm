@@ -1,2 +1,2 @@
 # FlaskCharm
-Simples flask charm for Juju
+Simples flask charm for Juju!
